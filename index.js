@@ -13,6 +13,11 @@ for(name of names){
 */
 function createAcrotiche(name){
   name = name.toLowerCase();
+
+  if(name.length < 3){
+    return getAdjectiveNoun(name);
+  }
+
   [subject, verb, object] = divideNameInThree(name);
 
   subject = getAdjectiveNoun(subject)
@@ -22,7 +27,7 @@ function createAcrotiche(name){
   return subject.concat(verb, object);
 }
 
-function captialize(word){
+function capitalize(word){
   return word.charAt(0).toUpperCase() + word.slice(1, word.length);
 }
 
@@ -34,8 +39,9 @@ function printAcrotiche(acrotiche){
     for(let j = 0; j < i; j++)
     process.stdout.write(" ");
     
-    console.log(acrotiche[i]);
+    console.log(capitalize(acrotiche[i]));
   }
+  console.log("");
 }
 
 function divideNameInThree(name){
