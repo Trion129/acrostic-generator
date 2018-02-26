@@ -12,3 +12,9 @@ Inspired by:
 ```bash
 node index.js Trion
 ```
+
+You can even do multiple at same time :P
+
+```bash
+node index.js Trion Parminder
+```
