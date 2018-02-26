@@ -1,0 +1,16 @@
+{
+  "name": "acrotichegen",
+  "version": "1.0.0",
+  "description": "Creates acrostiche for the name",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js \"Parminder Singh\""
+  },
+  "keywords": [
+    "rita",
+    "javascript",
+    "creative"
+  ],
+  "author": "Trion",
+  "license": "MIT"
+}
