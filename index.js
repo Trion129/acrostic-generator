@@ -3,8 +3,15 @@ const Rita = require('./rita-full')
 const names = process.argv.slice(2);
 
 for(name of names){
+  name = preprocess(name);
   acrotiche = createAcrotiche(name);
   printAcrotiche(acrotiche);
+}
+
+function preprocess(name){
+  name = name.toLowerCase();
+  name = name.replace(/[^a-z]/gi, '');
+  return name;
 }
 
 /*
@@ -12,7 +19,10 @@ for(name of names){
   @returns string[] words for the acrotiche
 */
 function createAcrotiche(name){
-  name = name.toLowerCase();
+  
+  if(name.length == 0){
+    return [];
+  }
 
   if(name.length < 3){
     return getAdjectiveNoun(name);
